@@ -16,6 +16,9 @@ public void setup(){
   size(350, 100, JAVA2D);
   customGUI();
   port = new Serial(this, "/dev/ttyACM0", 9600);
+  //String nomPort = Serial.list()[0];
+  //port = new Serial(this, nomPort, 9600);
+  //utiliser ces 2 lignes si /dev/ttyACM0 n'est pas reconnu  
 }
 
 public void draw(){  

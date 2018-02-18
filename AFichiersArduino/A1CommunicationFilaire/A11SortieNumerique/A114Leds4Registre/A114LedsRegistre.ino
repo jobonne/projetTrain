@@ -1,9 +1,7 @@
-/* Envoyer 0b01000000 (soit 64 en décimal) est le 
- * code ASCII correspondant à  @ 
- * Envoyer 0b00100000 (soit 32 en décimal) est le 
- * code ASCII correspondant à la barre d'espace.
- * ou envoyer 0b01100000 (soit 96 en décimal) est le 
- * code ASCII correspondant à l'accent grave.
+/* Brancher 4 LED chacune avec une résistance de protection,
+ sur les broches 8,9,10 et 11. 
+Taper successivement les lettres majuscules de A à P 
+à partir du moniteur série
 */
 
 void setup() {
