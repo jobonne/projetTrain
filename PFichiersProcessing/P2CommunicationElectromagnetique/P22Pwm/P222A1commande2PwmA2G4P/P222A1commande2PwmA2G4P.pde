@@ -1,3 +1,12 @@
+/*Ce programme crée 2 curseurs et 2 étiquettes. 
+Le premier curseur permet d'envoyer une chaime s3,<0 à 255>
+Le second curseur permet d'envoyer une chaime s5,<0 à 255>
+Ces chaines sont envoyées vers une carte Arduino dans le but
+d'être transmises vers 2 sorties PWM d'une autre carte Arduino.
+Si la transmission s'est bien déroulée, la chaîne est retournée 
+vers ce programme et affichée. 
+*/
+
 import processing.serial.*; 
 import g4p_controls.*;
 import java.awt.Font;

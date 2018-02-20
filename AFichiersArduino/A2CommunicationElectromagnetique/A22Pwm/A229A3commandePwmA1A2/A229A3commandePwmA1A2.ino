@@ -8,6 +8,7 @@
 #include <MirfHardwareSpiDriver.h>
 
 typedef struct {
+  byte arduino;
   byte commande;
   byte valeur;
 } MaStructure;
@@ -20,12 +21,13 @@ void setup() {
   Mirf.spi = &MirfHardwareSpi; 
   Mirf.init();  
   Mirf.payload = sizeof(MaStructure);
+  Mirf.channel=50;
   Mirf.config(); 
   
-  Mirf.setRADDR((byte *) "LOCO1");
+  Mirf.setRADDR((byte *) "LOCO2");
   Mirf.setTADDR((byte *) "ARDU1"); 
   
-  Serial.println("Loco"); 
+  Serial.println("Loco2"); 
 }
 
 void loop() {
@@ -33,14 +35,15 @@ void loop() {
 
   if(!Mirf.isSending() && Mirf.dataReady()){
     Mirf.getData((byte*) &message); 
-    
-    Serial.print("commande="); 
+    Serial.print(" arduino = "); 
+    Serial.print(message.arduino);
+    Serial.print(" commande = "); 
     Serial.print(message.commande);
-    Serial.print(" valeur=");
+    Serial.print(" valeur = ");
     Serial.println(message.valeur);
     analogWrite(message.commande,message.valeur);
     
     Mirf.send((byte*) &message);
-    while(Mirf.isSending());
+    //while(Mirf.isSending());
   }
 }
